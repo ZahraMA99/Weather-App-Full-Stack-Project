@@ -10,7 +10,7 @@ const loadPage = async function () {
 };
 
 const handleSearch = async function (cityName) {
-  console.log(tempManager.cityData);
+  //console.log(tempManager.cityData);
   await tempManager.getCityData(cityName);
   renderer.renderWeatherData(tempManager.cityData);
 };

@@ -17,12 +17,12 @@ app.get("/city/:cityName", (request, response) => {
   requestApi.then(function (res) {
     let cityInfo = res.data;
     let temp = cityInfo.main.temp;
-    let tempToCels = parseInt(temp - CELSIUS); // find another way 
+    let tempToCels = parseInt(temp - CELSIUS); 
     let city = {
       name: cityInfo.name,
       temperature: tempToCels,
       condition: cityInfo.weather[0].description,
-      conditionPic: // find another way 
+      conditionPic: 
         "http://openweathermap.org/img/wn/" +
         cityInfo.weather[0].icon +
         "@2x.png",
