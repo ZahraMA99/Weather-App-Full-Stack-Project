@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+<body>
+    
+</body>
+<div id="main-container">
+<div id="serach-container">
+    <input id="searchCity" type="text" placeholder="City Name">
+    <button id="search-icon" type="submit"><i class="fa fa-search"></i></button>
+</div>
+<div id="city-container"></div>
+</div>
+
+<script id="city-data-templete" type="text/x-handlebars-template">
+    {{#each cityWeatherInfo}}
+    <div id="data-container">
+      <!-- delete these icons -->
+        <div id="icons-btn">
+            <i class="fas fa-plus save-city"></i>
+            <i class="fa fa-minus remove-city" aria-hidden="true"></i>
+            <i class="fa fa-refresh refresh-city" aria-hidden="true"></i> 
+        </div>
+   
+        <div id="cityName-cityTemp">
+            <div id="cityTemp">{{temperature}}°</div>
+            <div id="cityName">{{name}}</div>
+        </div>
+
+        <div id="condition">
+            <img src="{{conditionPic}}">
+            <div>{{condition}}</div>
+         </div>
+    </div>
+    {{/each}}
+</script>
+
+  <!-- scripts import -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+  <script src="./axios/dist/axios.js"></script>
+  <script src="TempManager.js"></script>
+  <script src="./Renderer.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
